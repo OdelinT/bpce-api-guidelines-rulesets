@@ -23,7 +23,7 @@ rules:
     given: 
       - $.definitions
       - $.components.schemas
-    severity: error
+    severity: info
     tags:
       - model
     then:
@@ -76,7 +76,7 @@ rules:
     description: Property name must be in lowerCamelCase or be _links
     message: '{{description}} ({{path}})'
     given: $..properties
-    severity: error
+    severity: info
     tags:
       - property
     then:

@@ -45,7 +45,7 @@ rules:
     tags:
       - info
     recommended: true
-    severity: error
+    severity: info
     given: $.info.title
     then:
       function: pattern

@@ -51,7 +51,7 @@ rules:
     recommended: true
     description: Base path structure must be /apiName/version (for example /someName/v2)
     message: '{{description}} ({{path}})'
-    severity: error
+    severity: warn
     tags:
       - basepath
     given: 
@@ -66,7 +66,7 @@ rules:
     recommended: true
     description: Base path in lowerCamelCase (for example /someName/v2)
     message: '{{description}} ({{path}})'
-    severity: error
+    severity: info
     tags:
       - basepath
     given:
@@ -82,7 +82,7 @@ rules:
     recommended: true
     description: No trailing slash on basepath
     message: '{{description}} ({{path}})'
-    severity: error
+    severity: info
     tags:
       - basepath
     given:
@@ -97,7 +97,7 @@ rules:
     recommended: true
     description: Basepath should not contain api
     message: '{{description}} ({{path}})'
-    severity: error
+    severity: info
     tags:
       - basepath
     given:
@@ -112,7 +112,7 @@ rules:
     recommended: true
     description: Path must not contain base path (api name and version)
     message: '{{description}} ({{path}})'
-    severity: error
+    severity: warn
     tags:
       - basepath
       - path
@@ -127,7 +127,7 @@ rules:
     recommended: true
     description: Version must be in base path and not in path
     message: '{{description}} ({{path}})'
-    severity: error
+    severity: info
     tags:
       - basepath
       - path

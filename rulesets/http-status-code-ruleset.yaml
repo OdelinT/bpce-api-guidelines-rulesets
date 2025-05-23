@@ -40,7 +40,7 @@ rules:
     recommended: true
     description: Operation must return a 401 error response
     message: "{{description}} ({{path}})"
-    severity: error
+    severity: warn
     tags:
       - http status code
     given: $.paths.*.*.responses
@@ -52,7 +52,7 @@ rules:
     recommended: true
     description: Operation must return a 500 error response
     message: "{{description}} ({{path}})"
-    severity: error
+    severity: warn
     tags:
       - http status code
     given: $.paths.*.*.responses
@@ -62,9 +62,9 @@ rules:
 
   http-status-code-404-when-path-parameters:
     recommended: true
-    description: On operation on a path with a path parameter must return a 404 HTTP status code
+    description: An operation on a path with a path parameter must return a 404 HTTP status code
     message: "{{description}} ({{path}})"
-    severity: error
+    severity: warn
     tags:
       - http status code
     given: "$.paths[?(/{/i.test(@property))].*.responses"
@@ -89,7 +89,7 @@ rules:
     description: Operation must return a 400 HTTP status code in case of query, body or header parameters
     # {{error}} and not {{path}} because when using the ^ operator, the returned path is not the good one but OK in error
     message: '{{description}} ({{error}}) ({{path}})'
-    severity: error
+    severity: warn
     tags:
       - http status code
     given:
@@ -104,7 +104,7 @@ rules:
     recommended: true
     description: Get operation can only return 200, 400, 401, 403, 404, and 500 HTTP status codes
     message: "{{description}} ({{path}})"
-    severity: error
+    severity: warn
     tags:
       - http status code
     given: $.paths.*.get.responses
@@ -125,7 +125,7 @@ rules:
     recommended: true
     description: Put operation can only return 200, 400, 401, 403, 404, and 500 HTTP status codes
     message: "{{description}} ({{path}})"
-    severity: error
+    severity: warn
     tags:
       - http status code
     given: $.paths.*.put.responses
@@ -146,7 +146,7 @@ rules:
     recommended: true
     description: Patch operation can only return 200, 204, 400, 401, 403, 404, and 500 HTTP status codes
     message: "{{description}} ({{path}})"
-    severity: error
+    severity: warn
     tags:
       - http status code
     given: $.paths.*.patch.responses
@@ -168,7 +168,7 @@ rules:
     recommended: true
     description: Delete operation can only return 200, 204, 400, 401, 403, 404, and 500 HTTP status codes
     message: "{{description}} ({{path}})"
-    severity: error
+    severity: warn
     tags:
       - http status code
     given: $.paths.*.delete.responses
@@ -190,7 +190,7 @@ rules:
     recommended: true
     description: Post operation can only return 200, 201, 202, 400, 401, 403, 404, and 500 HTTP status codes
     message: "{{description}} ({{path}})"
-    severity: error
+    severity: warn
     tags:
       - http status code
     given: $.paths.*.post.responses
@@ -213,7 +213,7 @@ rules:
     recommended: true
     description: Post /search operation can only return 200, 400, 401, 403 and 500 HTTP status codes
     message: "{{description}} ({{path}})"
-    severity: error
+    severity: warn
     tags:
       - http status code
     given: "$.paths[?(/search$/i.test(@property))].post.responses"

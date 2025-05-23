@@ -91,7 +91,7 @@ rules:
   security-no-api-level:
     recommended: true
     description: API level security is forbidden (must be configured at operation level)
-    severity: error
+    severity: warn
     tags:
       - security
     given: $
@@ -103,7 +103,7 @@ rules:
     recommended: true
     description: Security must be defined on each operation
     message: "{{description}} ({{path}})"
-    severity: error
+    severity: warn
     tags:
       - security
     # selects everything that is not a HTTP method in a path

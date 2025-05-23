@@ -3,3 +3,9 @@ node_modules/
 
 # Npm configuration
 package-lock.json
+
+# API specification location
+in/
+
+# Lint export location
+out/

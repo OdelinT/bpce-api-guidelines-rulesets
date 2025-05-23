@@ -109,7 +109,7 @@ rules:
     given: 
       - $.paths.*.*.parameters[?( @.in === 'query' || @.in === 'body' || @.in === 'path' )].name
       - $.paths.*.parameters[?( @.in === 'query' || @.in === 'body' || @.in === 'path' )].name
-    severity: error
+    severity: info
     tags:
       - query parameter
       - path parameter

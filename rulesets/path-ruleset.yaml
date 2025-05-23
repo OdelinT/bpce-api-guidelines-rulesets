@@ -20,7 +20,7 @@ rules:
     recommended: true
     description: No trailing slash on path (cause problems on API gateway)
     message: '{{description}} ({{path}})'
-    severity: error
+    severity: warn
     tags:
       - path
     given: $.paths
@@ -47,7 +47,7 @@ rules:
     recommended: true
     description: Path must be in lowerCamelCase
     message: '{{description}} ({{path}})'
-    severity: error
+    severity: info
     tags:
       - path
     given: $.paths
@@ -61,7 +61,7 @@ rules:
     recommended: true
     description: "Resource path must conform to /resources/{id} pattern. Collection name must be plural. And {id} can be a magic one: me, current, latest, search."
     message: '{{description}} ({{path}})'
-    severity: error
+    severity: info
     tags:
       - path
     given: $.paths
